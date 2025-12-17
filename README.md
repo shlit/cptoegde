@@ -2,7 +2,7 @@
 
 ## 🏈 NFL Statistics - 2024-2025 Season
 
-*Last Updated: 2025-12-17 15:59:19 UTC*
+*Last Updated: 2025-12-17 16:02:06 UTC*
 
 > **Real NFL statistics from the 2024-2025 season with AI-powered game predictions**
 
@@ -28,8 +28,8 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Tampa Bay Buccaneers | **28** | 49.5% |
-| ✈️ Washington Commanders | **29** | 50.5% |
+| 🏠 Tampa Bay Buccaneers | **26** | 49.5% |
+| ✈️ Washington Commanders | **30** | 50.5% |
 
 **Predicted Winner:** ✈️ **Washington Commanders** (Confidence: Low)
 
@@ -40,10 +40,10 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Pittsburgh Steelers | **27** | 42.0% |
-| ✈️ Baltimore Ravens | **21** | 58.0% |
+| 🏠 Pittsburgh Steelers | **22** | 42.0% |
+| ✈️ Baltimore Ravens | **26** | 58.0% |
 
-**Predicted Winner:** 🏠 **Pittsburgh Steelers** (Confidence: Medium)
+**Predicted Winner:** ✈️ **Baltimore Ravens** (Confidence: Low)
 
 **Key Factors:**
 - Baltimore Ravens strong offense (28.4 PPG)
@@ -54,10 +54,10 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Houston Texans | **26** | 38.6% |
-| ✈️ Los Angeles Chargers | **20** | 61.4% |
+| 🏠 Houston Texans | **25** | 38.6% |
+| ✈️ Los Angeles Chargers | **21** | 61.4% |
 
-**Predicted Winner:** 🏠 **Houston Texans** (Confidence: Medium)
+**Predicted Winner:** 🏠 **Houston Texans** (Confidence: Low)
 
 **Key Factors:**
 - Los Angeles Chargers strong defense (18.5 PAPG)
@@ -67,8 +67,8 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Denver Broncos | **26** | 37.8% |
-| ✈️ Buffalo Bills | **25** | 62.2% |
+| 🏠 Denver Broncos | **27** | 37.8% |
+| ✈️ Buffalo Bills | **23** | 62.2% |
 
 **Predicted Winner:** 🏠 **Denver Broncos** (Confidence: Low)
 
@@ -81,10 +81,10 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Green Bay Packers | **24** | 36.2% |
-| ✈️ Philadelphia Eagles | **27** | 63.8% |
+| 🏠 Green Bay Packers | **28** | 36.2% |
+| ✈️ Philadelphia Eagles | **22** | 63.8% |
 
-**Predicted Winner:** ✈️ **Philadelphia Eagles** (Confidence: Low)
+**Predicted Winner:** 🏠 **Green Bay Packers** (Confidence: Medium)
 
 **Key Factors:**
 - Philadelphia Eagles excellent form (82.4% wins)

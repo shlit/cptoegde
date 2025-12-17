@@ -2,8 +2,8 @@ name: NFL Statistics Tracker (2024-2025 Season)
 
 on:
   schedule:
-    # Run every 6 hours
-    - cron: '0 */6 * * *'
+    # Run twice daily during NFL season (9 AM and 9 PM UTC)
+    - cron: '0 9,21 * * *'
   workflow_dispatch: # Allow manual trigger
   push:
     branches:

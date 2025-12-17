@@ -4,8 +4,14 @@ NFL Statistics Tracker - 2024-2025 Season
 Displays real NFL statistics and generates predictions for upcoming games
 """
 
-from datetime import datetime
+from datetime import datetime, timezone
 import random
+
+# Constants
+NFL_SEASON_GAMES = 17  # Number of games in NFL regular season
+
+# Seed for reproducible predictions (changes daily)
+random.seed(datetime.now(timezone.utc).date().toordinal())
 
 def get_passing_stats():
     """Get real passing statistics from 2024-2025 season"""
@@ -94,8 +100,8 @@ def get_team_stats_map():
             "points_for": team_data["points_for"],
             "points_against": team_data["points_against"],
             "point_diff": team_data["point_diff"],
-            "avg_points_scored": round(team_data["points_for"] / 17, 1),
-            "avg_points_allowed": round(team_data["points_against"] / 17, 1),
+            "avg_points_scored": round(team_data["points_for"] / NFL_SEASON_GAMES, 1),
+            "avg_points_allowed": round(team_data["points_against"] / NFL_SEASON_GAMES, 1),
             "win_pct": round(team_data["wins"] / (team_data["wins"] + team_data["losses"]) * 100, 1)
         }
     
@@ -130,8 +136,8 @@ def get_team_stats_map():
             "points_for": stats["points_for"],
             "points_against": stats["points_against"],
             "point_diff": stats["point_diff"],
-            "avg_points_scored": round(stats["points_for"] / 17, 1),
-            "avg_points_allowed": round(stats["points_against"] / 17, 1),
+            "avg_points_scored": round(stats["points_for"] / NFL_SEASON_GAMES, 1),
+            "avg_points_allowed": round(stats["points_against"] / NFL_SEASON_GAMES, 1),
             "win_pct": round(stats["wins"] / (stats["wins"] + stats["losses"]) * 100, 1)
         }
     
@@ -152,7 +158,7 @@ def predict_game_outcome(home_team, away_team, team_stats):
     predicted_home_score = (home_stats["avg_points_scored"] + away_stats["avg_points_allowed"]) / 2 + home_field_advantage
     predicted_away_score = (away_stats["avg_points_scored"] + home_stats["avg_points_allowed"]) / 2
     
-    # Add some variance for realism (+/- 0-6 points)
+    # Add some variance for realism (+/- 0-3 points)
     variance = random.uniform(-3, 3)
     predicted_home_score = round(predicted_home_score + variance)
     predicted_away_score = round(predicted_away_score - variance)
@@ -262,7 +268,7 @@ def generate_markdown_output():
     games = get_recent_games()
     predictions = get_upcoming_games()
     
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     
     markdown = f"""# cptoegde
 
@@ -381,4 +387,4 @@ if __name__ == "__main__":
         f.write(markdown_content)
     
     print("README.md updated successfully!")
-    print(f"Generated at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}")
+    print(f"Generated at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}")
