@@ -159,9 +159,10 @@ def predict_game_outcome(home_team, away_team, team_stats):
     predicted_away_score = (away_stats["avg_points_scored"] + home_stats["avg_points_allowed"]) / 2
     
     # Add some variance for realism (+/- 0-3 points)
-    variance = random.uniform(-3, 3)
-    predicted_home_score = round(predicted_home_score + variance)
-    predicted_away_score = round(predicted_away_score - variance)
+    home_variance = random.uniform(-3, 3)
+    away_variance = random.uniform(-3, 3)
+    predicted_home_score = round(predicted_home_score + home_variance)
+    predicted_away_score = round(predicted_away_score + away_variance)
     
     # Ensure scores are realistic (minimum 10 points)
     predicted_home_score = max(10, predicted_home_score)
@@ -236,25 +237,28 @@ def generate_key_factors(home_team, away_team, home_stats, away_stats):
     return factors[:3]  # Return top 3 factors
 
 def get_upcoming_games():
-    """Get upcoming NFL playoff games with predictions"""
+    """Get actual upcoming NFL playoff games with predictions"""
     team_stats = get_team_stats_map()
     
-    # Upcoming NFL Wild Card Weekend games (actual 2024-2025 playoff matchups)
+    # ACTUAL 2024-2025 NFL Playoff Schedule
+    # Wild Card Round (January 11-13, 2025)
     upcoming_matchups = [
-        ("Los Angeles Rams", "Minnesota Vikings"),
-        ("Tampa Bay Buccaneers", "Washington Commanders"),
-        ("Pittsburgh Steelers", "Baltimore Ravens"),
-        ("Houston Texans", "Los Angeles Chargers"),
-        ("Denver Broncos", "Buffalo Bills"),
-        ("Green Bay Packers", "Philadelphia Eagles"),
-        # Potential Divisional Round matchups
-        ("Kansas City Chiefs", "Houston Texans"),  # Assuming Texans win
-        ("Detroit Lions", "Washington Commanders"),  # Assuming Commanders win
+        # AFC Wild Card
+        ("Houston Texans", "Los Angeles Chargers", "Saturday, Jan 11, 4:30 PM ET", "AFC Wild Card"),
+        ("Baltimore Ravens", "Pittsburgh Steelers", "Saturday, Jan 11, 8:00 PM ET", "AFC Wild Card"),
+        ("Buffalo Bills", "Denver Broncos", "Sunday, Jan 12, 1:00 PM ET", "AFC Wild Card"),
+        
+        # NFC Wild Card
+        ("Philadelphia Eagles", "Green Bay Packers", "Sunday, Jan 12, 4:30 PM ET", "NFC Wild Card"),
+        ("Tampa Bay Buccaneers", "Washington Commanders", "Sunday, Jan 12, 8:00 PM ET", "NFC Wild Card"),
+        ("Los Angeles Rams", "Minnesota Vikings", "Monday, Jan 13, 8:00 PM ET", "NFC Wild Card"),
     ]
     
     predictions = []
-    for home, away in upcoming_matchups:
+    for home, away, game_time, round_name in upcoming_matchups:
         prediction = predict_game_outcome(home, away, team_stats)
+        prediction['game_time'] = game_time
+        prediction['round'] = round_name
         predictions.append(prediction)
     
     return predictions
@@ -278,18 +282,20 @@ def generate_markdown_output():
 
 > **Real NFL statistics from the 2024-2025 season with AI-powered game predictions**
 
-### 🔮 Upcoming Game Predictions
+### 🔮 NFL Playoff Predictions - Wild Card Round
 
-*Predictions based on team statistics, recent performance, and historical data*
+*Predictions for actual upcoming playoff games (January 11-13, 2025)*
 
 """
     
-    # Add predictions
-    for i, pred in enumerate(predictions[:6], 1):  # Show first 6 predictions
+    # Add predictions with game times
+    for i, pred in enumerate(predictions, 1):
         winner_emoji = "🏠" if pred["predicted_winner"] == pred["home_team"] else "✈️"
         
         markdown += f"""
-#### Game {i}: {pred['home_team']} vs {pred['away_team']}
+#### Game {i}: {pred['round']}
+**{pred['home_team']} vs {pred['away_team']}**  
+📅 {pred['game_time']}
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
@@ -380,11 +386,15 @@ def generate_markdown_output():
     return markdown
 
 if __name__ == "__main__":
-    # Generate and save markdown output
-    markdown_content = generate_markdown_output()
-    
-    with open("README.md", "w") as f:
-        f.write(markdown_content)
-    
-    print("README.md updated successfully!")
-    print(f"Generated at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}")
+    try:
+        # Generate and save markdown output
+        markdown_content = generate_markdown_output()
+        
+        with open("README.md", "w") as f:
+            f.write(markdown_content)
+        
+        print("README.md updated successfully!")
+        print(f"Generated at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}")
+    except Exception as e:
+        print(f"Error updating README.md: {e}")
+        exit(1)

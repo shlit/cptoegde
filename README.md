@@ -2,92 +2,104 @@
 
 ## 🏈 NFL Statistics - 2024-2025 Season
 
-*Last Updated: 2025-12-17 16:02:06 UTC*
+*Last Updated: 2025-12-17 16:04:30 UTC*
 
 > **Real NFL statistics from the 2024-2025 season with AI-powered game predictions**
 
-### 🔮 Upcoming Game Predictions
+### 🔮 NFL Playoff Predictions - Wild Card Round
 
-*Predictions based on team statistics, recent performance, and historical data*
+*Predictions for actual upcoming playoff games (January 11-13, 2025)*
 
 
-#### Game 1: Los Angeles Rams vs Minnesota Vikings
+#### Game 1: AFC Wild Card
+**Houston Texans vs Los Angeles Chargers**  
+📅 Saturday, Jan 11, 4:30 PM ET
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Los Angeles Rams | **21** | 33.7% |
-| ✈️ Minnesota Vikings | **26** | 66.3% |
+| 🏠 Houston Texans | **20** | 38.6% |
+| ✈️ Los Angeles Chargers | **20** | 61.4% |
 
-**Predicted Winner:** ✈️ **Minnesota Vikings** (Confidence: Low)
+**Predicted Winner:** ✈️ **Los Angeles Chargers** (Confidence: Low)
 
 **Key Factors:**
-- Minnesota Vikings excellent form (87.5% wins)
+- Los Angeles Chargers strong defense (18.5 PAPG)
 - Home field advantage
 
-#### Game 2: Tampa Bay Buccaneers vs Washington Commanders
+#### Game 2: AFC Wild Card
+**Baltimore Ravens vs Pittsburgh Steelers**  
+📅 Saturday, Jan 11, 8:00 PM ET
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Tampa Bay Buccaneers | **26** | 49.5% |
-| ✈️ Washington Commanders | **30** | 50.5% |
+| 🏠 Baltimore Ravens | **24** | 64.0% |
+| ✈️ Pittsburgh Steelers | **24** | 36.0% |
 
-**Predicted Winner:** ✈️ **Washington Commanders** (Confidence: Low)
-
-**Key Factors:**
-- Home field advantage
-
-#### Game 3: Pittsburgh Steelers vs Baltimore Ravens
-
-| Team | Predicted Score | Win Probability |
-|------|----------------|-----------------|
-| 🏠 Pittsburgh Steelers | **22** | 42.0% |
-| ✈️ Baltimore Ravens | **26** | 58.0% |
-
-**Predicted Winner:** ✈️ **Baltimore Ravens** (Confidence: Low)
+**Predicted Winner:** ✈️ **Pittsburgh Steelers** (Confidence: Low)
 
 **Key Factors:**
 - Baltimore Ravens strong offense (28.4 PPG)
 - Pittsburgh Steelers strong defense (19.1 PAPG)
 - Baltimore Ravens excellent form (70.6% wins)
 
-#### Game 4: Houston Texans vs Los Angeles Chargers
+#### Game 3: AFC Wild Card
+**Buffalo Bills vs Denver Broncos**  
+📅 Sunday, Jan 12, 1:00 PM ET
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Houston Texans | **25** | 38.6% |
-| ✈️ Los Angeles Chargers | **21** | 61.4% |
+| 🏠 Buffalo Bills | **29** | 68.2% |
+| ✈️ Denver Broncos | **26** | 31.8% |
 
-**Predicted Winner:** 🏠 **Houston Texans** (Confidence: Low)
-
-**Key Factors:**
-- Los Angeles Chargers strong defense (18.5 PAPG)
-- Home field advantage
-
-#### Game 5: Denver Broncos vs Buffalo Bills
-
-| Team | Predicted Score | Win Probability |
-|------|----------------|-----------------|
-| 🏠 Denver Broncos | **27** | 37.8% |
-| ✈️ Buffalo Bills | **23** | 62.2% |
-
-**Predicted Winner:** 🏠 **Denver Broncos** (Confidence: Low)
+**Predicted Winner:** 🏠 **Buffalo Bills** (Confidence: Low)
 
 **Key Factors:**
 - Buffalo Bills strong offense (30.3 PPG)
 - Denver Broncos strong defense (19.6 PAPG)
 - Buffalo Bills excellent form (76.5% wins)
 
-#### Game 6: Green Bay Packers vs Philadelphia Eagles
+#### Game 4: NFC Wild Card
+**Philadelphia Eagles vs Green Bay Packers**  
+📅 Sunday, Jan 12, 4:30 PM ET
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Green Bay Packers | **28** | 36.2% |
-| ✈️ Philadelphia Eagles | **22** | 63.8% |
+| 🏠 Philadelphia Eagles | **31** | 69.8% |
+| ✈️ Green Bay Packers | **23** | 30.2% |
 
-**Predicted Winner:** 🏠 **Green Bay Packers** (Confidence: Medium)
+**Predicted Winner:** 🏠 **Philadelphia Eagles** (Confidence: Medium)
 
 **Key Factors:**
 - Philadelphia Eagles excellent form (82.4% wins)
+- Home field advantage
+
+#### Game 5: NFC Wild Card
+**Tampa Bay Buccaneers vs Washington Commanders**  
+📅 Sunday, Jan 12, 8:00 PM ET
+
+| Team | Predicted Score | Win Probability |
+|------|----------------|-----------------|
+| 🏠 Tampa Bay Buccaneers | **32** | 49.5% |
+| ✈️ Washington Commanders | **29** | 50.5% |
+
+**Predicted Winner:** 🏠 **Tampa Bay Buccaneers** (Confidence: Low)
+
+**Key Factors:**
+- Home field advantage
+
+#### Game 6: NFC Wild Card
+**Los Angeles Rams vs Minnesota Vikings**  
+📅 Monday, Jan 13, 8:00 PM ET
+
+| Team | Predicted Score | Win Probability |
+|------|----------------|-----------------|
+| 🏠 Los Angeles Rams | **22** | 33.7% |
+| ✈️ Minnesota Vikings | **25** | 66.3% |
+
+**Predicted Winner:** ✈️ **Minnesota Vikings** (Confidence: Low)
+
+**Key Factors:**
+- Minnesota Vikings excellent form (87.5% wins)
 - Home field advantage
 
 ---
