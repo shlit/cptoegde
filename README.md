@@ -2,7 +2,7 @@
 
 ## 🏈 NFL Statistics - 2024-2025 Season
 
-*Last Updated: 2025-12-22 21:18:10 UTC*
+*Last Updated: 2025-12-23 09:24:49 UTC*
 
 > **Real NFL statistics from the 2024-2025 season with AI-powered game predictions**
 
@@ -17,10 +17,10 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Houston Texans | **23** | 38.6% |
-| ✈️ Los Angeles Chargers | **21** | 61.4% |
+| 🏠 Houston Texans | **22** | 38.6% |
+| ✈️ Los Angeles Chargers | **26** | 61.4% |
 
-**Predicted Winner:** 🏠 **Houston Texans** (Confidence: Low)
+**Predicted Winner:** ✈️ **Los Angeles Chargers** (Confidence: Low)
 
 **Key Factors:**
 - Los Angeles Chargers strong defense (18.5 PAPG)
@@ -32,10 +32,10 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Baltimore Ravens | **29** | 64.0% |
-| ✈️ Pittsburgh Steelers | **24** | 36.0% |
+| 🏠 Baltimore Ravens | **24** | 64.0% |
+| ✈️ Pittsburgh Steelers | **25** | 36.0% |
 
-**Predicted Winner:** 🏠 **Baltimore Ravens** (Confidence: Low)
+**Predicted Winner:** ✈️ **Pittsburgh Steelers** (Confidence: Low)
 
 **Key Factors:**
 - Baltimore Ravens strong offense (28.4 PPG)
@@ -48,10 +48,10 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Buffalo Bills | **24** | 68.2% |
-| ✈️ Denver Broncos | **21** | 31.8% |
+| 🏠 Buffalo Bills | **28** | 68.2% |
+| ✈️ Denver Broncos | **20** | 31.8% |
 
-**Predicted Winner:** 🏠 **Buffalo Bills** (Confidence: Low)
+**Predicted Winner:** 🏠 **Buffalo Bills** (Confidence: Medium)
 
 **Key Factors:**
 - Buffalo Bills strong offense (30.3 PPG)
@@ -64,8 +64,8 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Philadelphia Eagles | **29** | 69.8% |
-| ✈️ Green Bay Packers | **23** | 30.2% |
+| 🏠 Philadelphia Eagles | **26** | 69.8% |
+| ✈️ Green Bay Packers | **20** | 30.2% |
 
 **Predicted Winner:** 🏠 **Philadelphia Eagles** (Confidence: Medium)
 
@@ -79,10 +79,10 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Tampa Bay Buccaneers | **32** | 49.5% |
-| ✈️ Washington Commanders | **25** | 50.5% |
+| 🏠 Tampa Bay Buccaneers | **29** | 49.5% |
+| ✈️ Washington Commanders | **28** | 50.5% |
 
-**Predicted Winner:** 🏠 **Tampa Bay Buccaneers** (Confidence: Medium)
+**Predicted Winner:** 🏠 **Tampa Bay Buccaneers** (Confidence: Low)
 
 **Key Factors:**
 - Home field advantage
@@ -93,8 +93,8 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Los Angeles Rams | **27** | 33.7% |
-| ✈️ Minnesota Vikings | **25** | 66.3% |
+| 🏠 Los Angeles Rams | **22** | 33.7% |
+| ✈️ Minnesota Vikings | **20** | 66.3% |
 
 **Predicted Winner:** 🏠 **Los Angeles Rams** (Confidence: Low)
 
