@@ -2,7 +2,7 @@
 
 ## 🏈 NFL Statistics - 2024-2025 Season
 
-*Last Updated: 2025-12-25 21:18:15 UTC*
+*Last Updated: 2025-12-26 09:21:57 UTC*
 
 > **Real NFL statistics from the 2024-2025 season with AI-powered game predictions**
 
@@ -17,8 +17,8 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Houston Texans | **24** | 38.6% |
-| ✈️ Los Angeles Chargers | **20** | 61.4% |
+| 🏠 Houston Texans | **25** | 38.6% |
+| ✈️ Los Angeles Chargers | **24** | 61.4% |
 
 **Predicted Winner:** 🏠 **Houston Texans** (Confidence: Low)
 
@@ -32,10 +32,10 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Baltimore Ravens | **29** | 64.0% |
-| ✈️ Pittsburgh Steelers | **22** | 36.0% |
+| 🏠 Baltimore Ravens | **26** | 64.0% |
+| ✈️ Pittsburgh Steelers | **21** | 36.0% |
 
-**Predicted Winner:** 🏠 **Baltimore Ravens** (Confidence: Medium)
+**Predicted Winner:** 🏠 **Baltimore Ravens** (Confidence: Low)
 
 **Key Factors:**
 - Baltimore Ravens strong offense (28.4 PPG)
@@ -49,7 +49,7 @@
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
 | 🏠 Buffalo Bills | **28** | 68.2% |
-| ✈️ Denver Broncos | **20** | 31.8% |
+| ✈️ Denver Broncos | **21** | 31.8% |
 
 **Predicted Winner:** 🏠 **Buffalo Bills** (Confidence: Medium)
 
@@ -64,7 +64,7 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Philadelphia Eagles | **27** | 69.8% |
+| 🏠 Philadelphia Eagles | **30** | 69.8% |
 | ✈️ Green Bay Packers | **25** | 30.2% |
 
 **Predicted Winner:** 🏠 **Philadelphia Eagles** (Confidence: Low)
@@ -93,8 +93,8 @@
 
 | Team | Predicted Score | Win Probability |
 |------|----------------|-----------------|
-| 🏠 Los Angeles Rams | **23** | 33.7% |
-| ✈️ Minnesota Vikings | **21** | 66.3% |
+| 🏠 Los Angeles Rams | **26** | 33.7% |
+| ✈️ Minnesota Vikings | **22** | 66.3% |
 
 **Predicted Winner:** 🏠 **Los Angeles Rams** (Confidence: Low)
 
