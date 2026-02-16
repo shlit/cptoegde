@@ -126,7 +126,7 @@
                 translation="[660,100]" />
             <Label
                 id="helpText"
-                text="Controls:&#xA;&#xA;OK - Enter URL or search term&#xA;Up/Down - Scroll content&#xA;Left - Go back to previous page&#xA;Right - Follow highlighted link&#xA;Rewind (<<) - Go back in history&#xA;Fast Forward (>>) - Show bookmarks&#xA;Play - Reload current page&#xA;* (Options) - Show this help&#xA;&#xA;Press any key to close this help screen."
+                text="Controls:&#xA;&#xA;OK - Enter URL or search term&#xA;Up/Down - Scroll content&#xA;Left - Go back to previous page&#xA;Right - Follow highlighted link&#xA;Rewind (&lt;&lt;) - Go back in history&#xA;Fast Forward (&gt;&gt;) - Show bookmarks&#xA;Play - Reload current page&#xA;* (Options) - Show this help&#xA;&#xA;Press any key to close this help screen."
                 font="font:MediumSystemFont"
                 color="#CCCCCC"
                 width="1200"
