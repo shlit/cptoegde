@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ScrollableContent" extends="Group">
+    <interface>
+        <field id="contentText" type="string" value="" onChange="onContentChanged" />
+        <field id="htmlContent" type="string" value="" onChange="onHtmlContentChanged" />
+        <field id="links" type="assocarray" />
+        <field id="selectedLinkIndex" type="integer" value="-1" />
+        <field id="useHtmlRenderer" type="boolean" value="true" />
+    </interface>
+
+    <children>
+        <!-- Content container -->
+        <Group id="contentWrapper" translation="[40,10]">
+            <!-- Plain text fallback -->
+            <LayoutGroup
+                id="contentLayout"
+                layoutDirection="vert"
+                visible="false">
+
+                <Label
+                    id="pageContent"
+                    text=""
+                    font="font:SmallSystemFont"
+                    color="#E0E0E0"
+                    width="1840"
+                    wrap="true"
+                    maxLines="0" />
+            </LayoutGroup>
+
+            <!-- HTML Renderer -->
+            <HtmlRenderer
+                id="htmlRenderer"
+                renderWidth="1840"
+                visible="true" />
+        </Group>
+
+        <!-- Link highlight indicator -->
+        <Rectangle
+            id="linkHighlight"
+            width="1840"
+            height="30"
+            color="#4A90D933"
+            visible="false"
+            translation="[40,0]" />
+    </children>
+
+    <script type="text/brightscript" uri="pkg:/components/ScrollableContent.brs" />
+</component>

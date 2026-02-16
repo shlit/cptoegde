@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="BrowserScene" extends="Scene">
+    <interface>
+        <field id="currentUrl" type="string" value="" />
+    </interface>
+
+    <children>
+        <!-- Background -->
+        <Rectangle
+            id="background"
+            width="1920"
+            height="1080"
+            color="#242424" />
+
+        <!-- Top Bar -->
+        <Rectangle
+            id="topBar"
+            width="1920"
+            height="80"
+            color="#333333"
+            translation="[0,0]" />
+
+        <!-- Back Button -->
+        <Label
+            id="backButton"
+            text="◀ Back"
+            font="font:MediumSystemFont"
+            color="#AAAAAA"
+            translation="[20,22]" />
+
+        <!-- URL Bar Background -->
+        <Rectangle
+            id="urlBarBg"
+            width="1500"
+            height="50"
+            color="#FFFFFF"
+            translation="[180,15]" />
+
+        <!-- URL Display -->
+        <Label
+            id="urlDisplay"
+            text="Enter a URL or search term..."
+            font="font:SmallSystemFont"
+            color="#666666"
+            width="1480"
+            translation="[190,25]" />
+
+        <!-- Search/Go Button -->
+        <Rectangle
+            id="goButtonBg"
+            width="120"
+            height="50"
+            color="#4A90D9"
+            translation="[1700,15]" />
+
+        <Label
+            id="goButtonLabel"
+            text="GO"
+            font="font:MediumBoldSystemFont"
+            color="#FFFFFF"
+            translation="[1740,22]" />
+
+        <!-- Status Bar -->
+        <Rectangle
+            id="statusBarBg"
+            width="1920"
+            height="35"
+            color="#2A2A2A"
+            translation="[0,80]" />
+
+        <Label
+            id="statusLabel"
+            text="Ready - Press OK to enter a URL or search"
+            font="font:SmallestSystemFont"
+            color="#AAAAAA"
+            translation="[20,87]" />
+
+        <!-- Content Area -->
+        <ScrollableContent
+            id="contentArea"
+            translation="[0,115]" />
+
+        <!-- Focus Indicator -->
+        <Rectangle
+            id="focusIndicator"
+            width="1504"
+            height="54"
+            color="#00000000"
+            translation="[178,13]" />
+
+        <!-- Keyboard Dialog (hidden by default) -->
+        <KeyboardDialog
+            id="keyboardDialog"
+            visible="false"
+            translation="[310,200]" />
+
+        <!-- Loading Spinner Overlay -->
+        <Rectangle
+            id="loadingOverlay"
+            width="1920"
+            height="965"
+            color="#000000CC"
+            visible="false"
+            translation="[0,115]">
+            <Label
+                id="loadingLabel"
+                text="Loading..."
+                font="font:LargeBoldSystemFont"
+                color="#FFFFFF"
+                translation="[860,430]" />
+        </Rectangle>
+
+        <!-- Help Overlay -->
+        <Rectangle
+            id="helpOverlay"
+            width="1920"
+            height="1080"
+            color="#000000DD"
+            visible="false"
+            translation="[0,0]">
+            <Label
+                id="helpTitle"
+                text="Roku Browser - Help"
+                font="font:LargeBoldSystemFont"
+                color="#FFFFFF"
+                translation="[660,100]" />
+            <Label
+                id="helpText"
+                text="Controls:&#xA;&#xA;OK - Enter URL or search term&#xA;Up/Down - Scroll content&#xA;Left - Go back to previous page&#xA;Right - Follow highlighted link&#xA;Rewind (<<) - Go back in history&#xA;Fast Forward (>>) - Show bookmarks&#xA;Play - Reload current page&#xA;* (Options) - Show this help&#xA;&#xA;Press any key to close this help screen."
+                font="font:MediumSystemFont"
+                color="#CCCCCC"
+                width="1200"
+                wrap="true"
+                translation="[360,200]" />
+        </Rectangle>
+    </children>
+
+    <script type="text/brightscript" uri="pkg:/components/BrowserScene.brs" />
+</component>

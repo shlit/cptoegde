@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="KeyboardDialog" extends="Group">
+    <interface>
+        <field id="inputText" type="string" value="" />
+        <field id="submitted" type="integer" value="0" alwaysNotify="true" />
+        <field id="cancelled" type="integer" value="0" alwaysNotify="true" />
+    </interface>
+
+    <children>
+        <!-- Dialog Background -->
+        <Rectangle
+            id="dialogBg"
+            width="1300"
+            height="620"
+            color="#2A2A2A" />
+
+        <!-- Dialog Border -->
+        <Rectangle
+            width="1300"
+            height="3"
+            color="#4A90D9"
+            translation="[0,0]" />
+
+        <!-- Title -->
+        <Label
+            id="dialogTitle"
+            text="Enter URL or Search"
+            font="font:MediumBoldSystemFont"
+            color="#FFFFFF"
+            translation="[30,20]" />
+
+        <!-- Input Field Background -->
+        <Rectangle
+            id="inputBg"
+            width="1240"
+            height="50"
+            color="#FFFFFF"
+            translation="[30,65]" />
+
+        <!-- Input Text Display -->
+        <Label
+            id="inputDisplay"
+            text=""
+            font="font:SmallSystemFont"
+            color="#333333"
+            width="1220"
+            translation="[40,77]" />
+
+        <!-- Cursor indicator -->
+        <Label
+            id="cursor"
+            text="|"
+            font="font:SmallSystemFont"
+            color="#4A90D9"
+            translation="[40,77]" />
+
+        <!-- Keyboard Grid -->
+        <LayoutGroup
+            id="keyboardGrid"
+            layoutDirection="vert"
+            itemSpacings="[4]"
+            translation="[30,130]">
+
+            <!-- Row 1: Numbers -->
+            <LayoutGroup
+                id="row1"
+                layoutDirection="horiz"
+                itemSpacings="[4]" />
+
+            <!-- Row 2: QWERTY row -->
+            <LayoutGroup
+                id="row2"
+                layoutDirection="horiz"
+                itemSpacings="[4]" />
+
+            <!-- Row 3: ASDF row -->
+            <LayoutGroup
+                id="row3"
+                layoutDirection="horiz"
+                itemSpacings="[4]" />
+
+            <!-- Row 4: ZXCV row -->
+            <LayoutGroup
+                id="row4"
+                layoutDirection="horiz"
+                itemSpacings="[4]" />
+
+            <!-- Row 5: Special keys -->
+            <LayoutGroup
+                id="row5"
+                layoutDirection="horiz"
+                itemSpacings="[4]" />
+        </LayoutGroup>
+
+        <!-- Quick URL buttons -->
+        <LayoutGroup
+            id="quickButtons"
+            layoutDirection="horiz"
+            itemSpacings="[8]"
+            translation="[30,540]">
+        </LayoutGroup>
+
+        <!-- Instructions -->
+        <Label
+            id="instructions"
+            text="Use D-pad to select keys. OK to type. Rewind to delete. Play to submit. Back to cancel."
+            font="font:SmallestSystemFont"
+            color="#888888"
+            width="1240"
+            translation="[30,585]" />
+    </children>
+
+    <script type="text/brightscript" uri="pkg:/components/KeyboardDialog.brs" />
+</component>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="HtmlRenderer" extends="Group">
+    <interface>
+        <field id="htmlContent" type="string" value="" onChange="onHtmlChanged" />
+        <field id="renderWidth" type="integer" value="1840" />
+        <field id="renderedLinks" type="array" />
+    </interface>
+
+    <children>
+        <LayoutGroup
+            id="renderContainer"
+            layoutDirection="vert"
+            itemSpacings="[2]"
+            translation="[0,0]" />
+    </children>
+
+    <script type="text/brightscript" uri="pkg:/components/HtmlRenderer.brs" />
+</component>
