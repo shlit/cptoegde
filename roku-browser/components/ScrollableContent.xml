@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="ScrollableContent" extends="Group">
+    <interface>
+        <field id="contentText" type="string" value="" onChange="onContentChanged" />
+        <field id="links" type="assocarray" />
+        <field id="selectedLinkIndex" type="integer" value="-1" />
+    </interface>
+
+    <children>
+        <!-- Clipping region for content -->
+        <LayoutGroup
+            id="contentLayout"
+            layoutDirection="vert"
+            translation="[40,10]">
+
+            <Label
+                id="pageContent"
+                text=""
+                font="font:SmallSystemFont"
+                color="#E0E0E0"
+                width="1840"
+                wrap="true"
+                maxLines="0" />
+        </LayoutGroup>
+
+        <!-- Link highlight indicator -->
+        <Rectangle
+            id="linkHighlight"
+            width="1840"
+            height="30"
+            color="#4A90D933"
+            visible="false"
+            translation="[40,0]" />
+    </children>
+
+    <script type="text/brightscript" uri="pkg:/components/ScrollableContent.brs" />
+</component>

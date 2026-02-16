@@ -1,0 +1,17 @@
+## Roku Browser Channel
+## Sideloadable Roku web browser app
+
+title=Roku Browser
+major_version=1
+minor_version=0
+build_version=0
+mm_icon_focus_hd=pkg:/images/icon_focus_hd.png
+mm_icon_side_hd=pkg:/images/icon_side_hd.png
+mm_icon_focus_sd=pkg:/images/icon_focus_sd.png
+mm_icon_side_sd=pkg:/images/icon_side_sd.png
+splash_screen_hd=pkg:/images/splash_hd.png
+splash_screen_sd=pkg:/images/splash_sd.png
+splash_color=#242424
+splash_min_time=1000
+ui_resolutions=hd
+bs_const=debug=false
