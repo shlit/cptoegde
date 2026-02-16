@@ -3,6 +3,15 @@ sub init()
     m.renderedLinks = []
     m.nodeCount = 0
     m.maxNodes = 400
+    m.maxTokens = 2000
+
+    m.selfClosingTags = {}
+    m.selfClosingTags["br"] = true
+    m.selfClosingTags["hr"] = true
+    m.selfClosingTags["img"] = true
+    m.selfClosingTags["input"] = true
+    m.selfClosingTags["meta"] = true
+    m.selfClosingTags["link"] = true
 end sub
 
 sub onHtmlChanged()
@@ -55,7 +64,7 @@ function tokenizeHtml(html as string) as object
     pos = 1
     htmlLen = len(html)
 
-    while pos <= htmlLen and tokens.count() < 2000
+    while pos <= htmlLen and tokens.count() < m.maxTokens
         ltPos = instr(pos, html, "<")
         if ltPos = 0
             ' Rest is plain text
@@ -105,7 +114,7 @@ function tokenizeHtml(html as string) as object
             ' Remove trailing / for self-closing
             if right(tagName, 1) = "/" then tagName = left(tagName, len(tagName) - 1)
 
-            isSelfClosing = (right(tagLower, 1) = "/") or tagName = "br" or tagName = "hr" or tagName = "img" or tagName = "input" or tagName = "meta" or tagName = "link"
+            isSelfClosing = (right(tagLower, 1) = "/") or (m.selfClosingTags.DoesExist(tagName))
 
             token = { kind: "open", tag: tagName, raw: tagStr, selfClosing: isSelfClosing }
             tokens.push(token)

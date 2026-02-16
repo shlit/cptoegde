@@ -27,7 +27,7 @@ sub onHtmlContentChanged()
     end if
 
     ' Collect rendered links
-    if m.htmlRenderer.renderedLinks <> invalid
+    if m.htmlRenderer <> invalid and m.htmlRenderer.renderedLinks <> invalid
         m.top.links = m.htmlRenderer.renderedLinks
     end if
 end sub
