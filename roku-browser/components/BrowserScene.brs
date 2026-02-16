@@ -254,7 +254,7 @@ sub processHtml(html as string, baseUrl as string)
 
     ' Send raw HTML to the styled renderer
     m.contentArea.htmlContent = resolvedHtml
-    m.contentArea.translation = "[0,115]"
+    m.contentArea.translation = [0, 115]
 
     ' Also collect links from the renderer
     if m.contentArea.links <> invalid
@@ -502,7 +502,7 @@ sub showBookmarks()
     text = text + "work best with this browser." + chr(10)
 
     m.contentArea.contentText = text
-    m.contentArea.translation = "[0,115]"
+    m.contentArea.translation = [0, 115]
     m.scrollPosition = 0
     setStatus("Bookmarks")
 end sub
