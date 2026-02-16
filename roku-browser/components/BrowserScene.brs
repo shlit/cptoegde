@@ -305,7 +305,7 @@ function stripHtml(html as string) as string
     end for
 
     ' Replace list items with bullet points
-    result = replaceAll(lcase(result), "<li", chr(10) + "• <li")
+    result = replaceAll(lcase(result), "<li", chr(10) + chr(8226) + " <li")
 
     ' Strip remaining HTML tags
     output = ""
@@ -492,11 +492,11 @@ sub showBookmarks()
     end for
     text = text + chr(10)
     text = text + "--- Quick Links ---" + chr(10) + chr(10)
-    text = text + "• google.com - Web search" + chr(10)
-    text = text + "• wikipedia.org - Encyclopedia" + chr(10)
-    text = text + "• news.ycombinator.com - Tech news" + chr(10)
-    text = text + "• lite.duckduckgo.com - Private search" + chr(10)
-    text = text + "• text.npr.org - News (text-only)" + chr(10)
+    text = text + chr(8226) + " google.com - Web search" + chr(10)
+    text = text + chr(8226) + " wikipedia.org - Encyclopedia" + chr(10)
+    text = text + chr(8226) + " news.ycombinator.com - Tech news" + chr(10)
+    text = text + chr(8226) + " lite.duckduckgo.com - Private search" + chr(10)
+    text = text + chr(8226) + " text.npr.org - News (text-only)" + chr(10)
     text = text + chr(10)
     text = text + "Tip: Text-only or 'lite' versions of websites" + chr(10)
     text = text + "work best with this browser." + chr(10)
@@ -516,14 +516,14 @@ sub showError(message as string)
     errorText = "=== Error ===" + chr(10) + chr(10)
     errorText = errorText + message + chr(10) + chr(10)
     errorText = errorText + "Possible causes:" + chr(10)
-    errorText = errorText + "• The website may not be accessible" + chr(10)
-    errorText = errorText + "• Check your Roku's internet connection" + chr(10)
-    errorText = errorText + "• The URL might be incorrect" + chr(10)
-    errorText = errorText + "• The site may block non-browser requests" + chr(10) + chr(10)
+    errorText = errorText + chr(8226) + " The website may not be accessible" + chr(10)
+    errorText = errorText + chr(8226) + " Check your Roku's internet connection" + chr(10)
+    errorText = errorText + chr(8226) + " The URL might be incorrect" + chr(10)
+    errorText = errorText + chr(8226) + " The site may block non-browser requests" + chr(10) + chr(10)
     errorText = errorText + "Tips:" + chr(10)
-    errorText = errorText + "• Try text-only versions of websites" + chr(10)
-    errorText = errorText + "• Use lite.duckduckgo.com for searching" + chr(10)
-    errorText = errorText + "• Press OK to enter a new URL" + chr(10)
+    errorText = errorText + chr(8226) + " Try text-only versions of websites" + chr(10)
+    errorText = errorText + chr(8226) + " Use lite.duckduckgo.com for searching" + chr(10)
+    errorText = errorText + chr(8226) + " Press OK to enter a new URL" + chr(10)
 
     m.contentArea.contentText = errorText
     setStatus("Error - " + message)
