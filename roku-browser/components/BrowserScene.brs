@@ -232,9 +232,6 @@ function getBaseUrl(url as string) as string
 end function
 
 sub processHtml(html as string, baseUrl as string)
-    ' Strip HTML and extract readable text
-    text = stripHtml(html)
-
     ' Extract title
     titleStart = instr(1, lcase(html), "<title")
     if titleStart > 0
@@ -247,30 +244,52 @@ sub processHtml(html as string, baseUrl as string)
         end if
     end if
 
-    ' Extract links from the page
+    ' Resolve relative URLs in the HTML before rendering
+    resolvedHtml = resolveRelativeUrls(html, baseUrl)
+
+    ' Extract links from the page (for link-following feature)
     links = extractLinks(html, baseUrl)
-    m.contentArea.links = links
     m.currentLinks = links
     m.selectedLinkIndex = 0
 
-    ' Format text with link references
-    displayText = text
-    if links <> invalid and links.count() > 0
-        displayText = displayText + chr(10) + chr(10)
-        displayText = displayText + "--- Links Found ---" + chr(10)
-        linkNum = 1
-        for each link in links
-            if linkNum <= 50 ' Limit to 50 links
-                displayText = displayText + "[" + str(linkNum).trim() + "] " + link.text + chr(10)
-                displayText = displayText + "    " + link.url + chr(10)
-                linkNum = linkNum + 1
-            end if
-        end for
-    end if
-
-    m.contentArea.contentText = displayText
+    ' Send raw HTML to the styled renderer
+    m.contentArea.htmlContent = resolvedHtml
     m.contentArea.translation = "[0,115]"
+
+    ' Also collect links from the renderer
+    if m.contentArea.links <> invalid
+        renderedLinks = m.contentArea.links
+        ' Merge any renderer-discovered links into our link list
+        if type(renderedLinks) = "roArray"
+            for each rLink in renderedLinks
+                if rLink.url <> "" and rLink.text <> ""
+                    found = false
+                    for each eLink in m.currentLinks
+                        if eLink.url = rLink.url
+                            found = true
+                            exit for
+                        end if
+                    end for
+                    if not found
+                        m.currentLinks.push(rLink)
+                    end if
+                end if
+            end for
+        end if
+    end if
 end sub
+
+function resolveRelativeUrls(html as string, baseUrl as string) as string
+    ' Resolve relative href URLs to absolute
+    result = html
+    base = getBaseUrl(baseUrl)
+
+    ' Replace href="/ with href="base/
+    result = result.replace("href=" + chr(34) + "/", "href=" + chr(34) + base + "/")
+    result = result.replace("href='/", "href='" + base + "/")
+
+    return result
+end function
 
 function stripHtml(html as string) as string
     ' Remove script and style blocks first

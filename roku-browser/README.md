@@ -1,6 +1,6 @@
 # Roku Browser
 
-A sideloadable Roku channel that lets you browse the web on your Roku device. It fetches web pages via HTTP, strips the HTML down to readable text, and displays it with extracted links you can follow.
+A sideloadable Roku channel that lets you browse the web on your Roku device. It fetches web pages via HTTP and renders them with basic HTML styling using dynamically-created SceneGraph nodes — headings, bold, italic, links, lists, blockquotes, code blocks, and horizontal rules are all visually rendered.
 
 ## Features
 
@@ -9,7 +9,17 @@ A sideloadable Roku channel that lets you browse the web on your Roku device. It
 - **Link extraction** — Clickable links are listed at the bottom of each page
 - **Page history** — Navigate back through previously visited pages
 - **Bookmarks** — Quick access to popular text-friendly sites
-- **HTML-to-text rendering** — Strips HTML tags and renders readable text content
+- **Basic HTML rendering** — Renders HTML structure with visual styling:
+  - `<h1>`–`<h6>` headings with distinct sizes and weights
+  - `<b>`/`<strong>` bold text
+  - `<i>`/`<em>` italic text (rendered with distinct color)
+  - `<a>` links shown in blue
+  - `<ul>`/`<ol>`/`<li>` bulleted lists
+  - `<blockquote>` indented blocks with blue left border
+  - `<pre>`/`<code>` code blocks with green text and dark background
+  - `<hr>` horizontal rule dividers
+  - `<table>` basic table layout with separators
+  - `<p>`/`<div>`/`<br>` proper spacing and line breaks
 - **HTTPS support** — Full SSL/TLS support for secure sites
 
 ## Controls
@@ -80,9 +90,9 @@ A sideloadable Roku channel that lets you browse the web on your Roku device. It
 
 ## Limitations
 
-- No image rendering (Roku SceneGraph doesn't have an HTML renderer)
+- No image rendering (images are skipped — Roku SceneGraph can't render arbitrary images from URLs)
 - No JavaScript execution
-- No CSS styling
+- No CSS styling (basic styling is inferred from HTML structure instead)
 - No video/audio playback from web pages
 - Some websites may block non-browser User-Agent strings
 - Complex pages may take longer to process
@@ -98,10 +108,12 @@ roku-browser/
 ├── components/
 │   ├── BrowserScene.xml   # Main UI layout
 │   ├── BrowserScene.brs   # Core browser logic (URL handling, HTTP, HTML parsing)
+│   ├── HtmlRenderer.xml   # HTML-to-SceneGraph renderer component
+│   ├── HtmlRenderer.brs   # HTML tokenizer, parser, and styled node builder
 │   ├── KeyboardDialog.xml # On-screen keyboard layout
 │   ├── KeyboardDialog.brs # Keyboard input logic
-│   ├── ScrollableContent.xml  # Scrollable text display
-│   └── ScrollableContent.brs  # Content rendering
+│   ├── ScrollableContent.xml  # Scrollable content host (HTML + plain text modes)
+│   └── ScrollableContent.brs  # Content rendering mode switching
 └── images/
     ├── icon_focus_hd.png  # Channel icon (focused, HD)
     ├── icon_side_hd.png   # Channel icon (side, HD)
