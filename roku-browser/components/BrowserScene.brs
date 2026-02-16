@@ -37,7 +37,7 @@ sub setStatus(text as string)
     m.statusLabel.text = text
 end sub
 
-function onKeyPress(key as string, press as boolean) as boolean
+function onKeyEvent(key as string, press as boolean) as boolean
     if not press then return false
 
     ' Help overlay dismissal
@@ -356,77 +356,77 @@ function extractLinks(html as string, baseUrl as string) as object
         if aPos = 0 then aPos = instr(searchPos, lowerHtml, "<a" + chr(10))
         if aPos = 0 then exit while
 
-        ' Find href attribute
-        hrefPos = instr(aPos, lowerHtml, "href=" + chr(34))
-        if hrefPos = 0 then hrefPos = instr(aPos, lowerHtml, "href='")
-        if hrefPos = 0
-            searchPos = aPos + 3
-            goto skipLink
-        end if
-
-        ' Make sure this href belongs to this <a> tag
-        nextTagClose = instr(aPos, html, ">")
-        if hrefPos > nextTagClose
-            searchPos = nextTagClose + 1
-            goto skipLink
-        end if
-
-        ' Extract URL
-        quoteChar = mid(html, hrefPos + 5, 1)
-        urlStart = hrefPos + 6
-        urlEnd = instr(urlStart, html, quoteChar)
-        if urlEnd = 0
-            searchPos = aPos + 3
-            goto skipLink
-        end if
-
-        linkUrl = mid(html, urlStart, urlEnd - urlStart)
-
-        ' Get link text
-        tagClose = instr(aPos, html, ">")
-        aEndPos = instr(tagClose, lowerHtml, "</a>")
-        if aEndPos = 0
-            linkText = linkUrl
+        linkParsed = parseSingleLink(html, lowerHtml, aPos, baseUrl)
+        if linkParsed <> invalid
+            links.push(linkParsed.link)
+            searchPos = linkParsed.nextPos
         else
-            linkText = mid(html, tagClose + 1, aEndPos - tagClose - 1)
-            ' Strip any inner HTML tags from link text
-            cleanText = ""
-            inInnerTag = false
-            for ci = 0 to len(linkText) - 1
-                c = mid(linkText, ci + 1, 1)
-                if c = "<"
-                    inInnerTag = true
-                else if c = ">"
-                    inInnerTag = false
-                else if not inInnerTag
-                    cleanText = cleanText + c
-                end if
-            end for
-            linkText = cleanText.trim()
+            searchPos = aPos + 3
         end if
-
-        ' Resolve relative URLs
-        if left(linkUrl, 1) = "/"
-            linkUrl = getBaseUrl(baseUrl) + linkUrl
-        else if left(linkUrl, 1) = "#" or left(linkUrl, 11) = "javascript:"
-            searchPos = urlEnd + 1
-            goto skipLink
-        else if left(linkUrl, 4) <> "http"
-            linkUrl = getBaseUrl(baseUrl) + "/" + linkUrl
-        end if
-
-        if linkText <> "" and len(linkText) < 200
-            link = {}
-            link.url = linkUrl
-            link.text = linkText
-            links.push(link)
-        end if
-
-        searchPos = urlEnd + 1
-        skipLink:
     end while
 
     return links
+end function
+
+function parseSingleLink(html as string, lowerHtml as string, aPos as integer, baseUrl as string) as object
+    ' Find href attribute
+    hrefPos = instr(aPos, lowerHtml, "href=" + chr(34))
+    if hrefPos = 0 then hrefPos = instr(aPos, lowerHtml, "href='")
+    if hrefPos = 0 then return invalid
+
+    ' Make sure this href belongs to this <a> tag
+    nextTagClose = instr(aPos, html, ">")
+    if hrefPos > nextTagClose then return invalid
+
+    ' Extract URL
+    quoteChar = mid(html, hrefPos + 5, 1)
+    urlStart = hrefPos + 6
+    urlEnd = instr(urlStart, html, quoteChar)
+    if urlEnd = 0 then return invalid
+
+    linkUrl = mid(html, urlStart, urlEnd - urlStart)
+
+    ' Get link text
+    tagClose = instr(aPos, html, ">")
+    aEndPos = instr(tagClose, lowerHtml, "</a>")
+    if aEndPos = 0
+        linkText = linkUrl
+    else
+        linkText = mid(html, tagClose + 1, aEndPos - tagClose - 1)
+        ' Strip any inner HTML tags from link text
+        cleanText = ""
+        inInnerTag = false
+        for ci = 0 to len(linkText) - 1
+            c = mid(linkText, ci + 1, 1)
+            if c = "<"
+                inInnerTag = true
+            else if c = ">"
+                inInnerTag = false
+            else if not inInnerTag
+                cleanText = cleanText + c
+            end if
+        end for
+        linkText = cleanText.trim()
+    end if
+
+    ' Resolve relative URLs
+    if left(linkUrl, 1) = "/"
+        linkUrl = getBaseUrl(baseUrl) + linkUrl
+    else if left(linkUrl, 1) = "#" or left(linkUrl, 11) = "javascript:"
+        return invalid
+    else if left(linkUrl, 4) <> "http"
+        linkUrl = getBaseUrl(baseUrl) + "/" + linkUrl
+    end if
+
+    if linkText = "" or len(linkText) >= 200 then return invalid
+
+    result = {}
+    link = {}
+    link.url = linkUrl
+    link.text = linkText
+    result.link = link
+    result.nextPos = urlEnd + 1
+    return result
 end function
 
 function replaceAll(source as string, search as string, replacement as string) as string
