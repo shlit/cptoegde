@@ -306,10 +306,10 @@ sub renderTextNode(text as string, style as object)
     cleaned = text
     ' Collapse whitespace
     while instr(1, cleaned, "  ") > 0
-        cleaned = cleaned.replace("  ", " ")
+        cleaned = replaceAll(cleaned, "  ", " ")
     end while
-    cleaned = cleaned.replace(chr(10), " ")
-    cleaned = cleaned.replace(chr(13), " ")
+    cleaned = replaceAll(cleaned, chr(10), " ")
+    cleaned = replaceAll(cleaned, chr(13), " ")
     cleaned = cleaned.trim()
 
     if cleaned = "" then return
@@ -446,30 +446,30 @@ end function
 ' ============================================================
 function decodeEntities(text as string) as string
     result = text
-    result = result.replace("&amp;", "&")
-    result = result.replace("&lt;", "<")
-    result = result.replace("&gt;", ">")
-    result = result.replace("&quot;", chr(34))
-    result = result.replace("&apos;", "'")
-    result = result.replace("&nbsp;", " ")
-    result = result.replace("&#39;", "'")
-    result = result.replace("&#x27;", "'")
-    result = result.replace("&#x2F;", "/")
-    result = result.replace("&mdash;", "—")
-    result = result.replace("&ndash;", "–")
-    result = result.replace("&laquo;", "«")
-    result = result.replace("&raquo;", "»")
-    result = result.replace("&copy;", "©")
-    result = result.replace("&reg;", "®")
-    result = result.replace("&trade;", "™")
-    result = result.replace("&hellip;", "…")
-    result = result.replace("&bull;", "•")
-    result = result.replace("&#8211;", "–")
-    result = result.replace("&#8212;", "—")
-    result = result.replace("&#8216;", "'")
-    result = result.replace("&#8217;", "'")
-    result = result.replace("&#8220;", chr(34))
-    result = result.replace("&#8221;", chr(34))
+    result = replaceAll(result, "&amp;", "&")
+    result = replaceAll(result, "&lt;", "<")
+    result = replaceAll(result, "&gt;", ">")
+    result = replaceAll(result, "&quot;", chr(34))
+    result = replaceAll(result, "&apos;", "'")
+    result = replaceAll(result, "&nbsp;", " ")
+    result = replaceAll(result, "&#39;", "'")
+    result = replaceAll(result, "&#x27;", "'")
+    result = replaceAll(result, "&#x2F;", "/")
+    result = replaceAll(result, "&mdash;", "—")
+    result = replaceAll(result, "&ndash;", "–")
+    result = replaceAll(result, "&laquo;", "«")
+    result = replaceAll(result, "&raquo;", "»")
+    result = replaceAll(result, "&copy;", "©")
+    result = replaceAll(result, "&reg;", "®")
+    result = replaceAll(result, "&trade;", "™")
+    result = replaceAll(result, "&hellip;", "…")
+    result = replaceAll(result, "&bull;", "•")
+    result = replaceAll(result, "&#8211;", "–")
+    result = replaceAll(result, "&#8212;", "—")
+    result = replaceAll(result, "&#8216;", "'")
+    result = replaceAll(result, "&#8217;", "'")
+    result = replaceAll(result, "&#8220;", chr(34))
+    result = replaceAll(result, "&#8221;", chr(34))
     return result
 end function
 
@@ -495,5 +495,15 @@ function removeBlock(html as string, tagName as string) as string
         result = left(result, startPos - 1) + mid(result, endPos)
     end while
 
+    return result
+end function
+
+function replaceAll(source as string, search as string, replacement as string) as string
+    result = source
+    pos = instr(1, result, search)
+    while pos > 0
+        result = left(result, pos - 1) + replacement + mid(result, pos + len(search))
+        pos = instr(pos + len(replacement), result, search)
+    end while
     return result
 end function

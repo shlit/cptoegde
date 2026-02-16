@@ -153,7 +153,7 @@ function normalizeUrl(input as string) as string
     ' Otherwise treat as a search query
     searchQuery = trimmed
     ' URL encode spaces
-    searchQuery = searchQuery.replace(" ", "+")
+    searchQuery = replaceAll(searchQuery, " ", "+")
     return "https://www.google.com/search?q=" + searchQuery
 end function
 
@@ -285,8 +285,8 @@ function resolveRelativeUrls(html as string, baseUrl as string) as string
     base = getBaseUrl(baseUrl)
 
     ' Replace href="/ with href="base/
-    result = result.replace("href=" + chr(34) + "/", "href=" + chr(34) + base + "/")
-    result = result.replace("href='/", "href='" + base + "/")
+    result = replaceAll(result, "href=" + chr(34) + "/", "href=" + chr(34) + base + "/")
+    result = replaceAll(result, "href='/", "href='" + base + "/")
 
     return result
 end function
