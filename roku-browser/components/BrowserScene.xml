@@ -23,7 +23,7 @@
         <!-- Back Button -->
         <Label
             id="backButton"
-            text="◀ Back"
+            text="&lt; Back"
             font="font:MediumSystemFont"
             color="#AAAAAA"
             translation="[20,22]" />
