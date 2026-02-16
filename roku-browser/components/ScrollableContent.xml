@@ -3,7 +3,7 @@
     <interface>
         <field id="contentText" type="string" value="" onChange="onContentChanged" />
         <field id="htmlContent" type="string" value="" onChange="onHtmlContentChanged" />
-        <field id="links" type="assocarray" />
+        <field id="links" type="array" />
         <field id="selectedLinkIndex" type="integer" value="-1" />
         <field id="useHtmlRenderer" type="boolean" value="true" />
     </interface>
